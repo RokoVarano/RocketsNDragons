@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,26 +20,30 @@ const useStyles = makeStyles((theme) => ({
 
 const NavLink = () => {
   const classes = useStyles();
+  const history = useHistory();
+  const handleOnClick = (route) => {
+    history.push(route);
+  };
 
   return (
     <AppBar position="static">
       <Toolbar>
         <Typography variant="h6" className={classes.title}>
-          RocketsNDragons
+          News
         </Typography>
 
-        <Link color="inherit" to="/">
-          Profiles
-        </Link>
-        <Link color="inherit" to="/rockets">
+        <Button color="inherit" onClick={() => handleOnClick('/')}>
+          Profile
+        </Button>
+        <Button color="inherit" onClick={() => handleOnClick('/rockets')}>
           Rockets
-        </Link>
-        <Link color="inherit" to="/missions">
+        </Button>
+        <Button color="inherit" onClick={() => handleOnClick('/missions')}>
           Missions
-        </Link>
-        <Link color="inherit" to="/dragons">
+        </Button>
+        <Button color="inherit" onClick={() => handleOnClick('/dragons')}>
           Dragons
-        </Link>
+        </Button>
       </Toolbar>
     </AppBar>
   );
