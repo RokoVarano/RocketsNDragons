@@ -1,19 +1,19 @@
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Header from './components/Header/Header';
+import NavLink from './components/NavLink/NavLink';
 import store from './redux/configureStore';
+import Profile from './components/Profile/Profile';
 
 function App() {
   return (
     <Provider store={store}>
       <Router>
-        <Header />
+        <NavLink />
         <Switch>
           {/* <Route path="/rockets" component={Rockets} />
           <Route path="/missions" component={Missions} />
-          <Route path="/dragons" component={Dragons} />
-          <Route path="/" exact component={Profile} /> */}
-          <Route path="/" />
+          <Route path="/dragons" component={Dragons} /> */}
+          <Route path="/" exact component={Profile} />
         </Switch>
       </Router>
     </Provider>

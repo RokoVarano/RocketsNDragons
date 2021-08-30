@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Header = () => (
+const NavLink = () => (
   <nav>
     <Link to="/">Profile</Link>
     <Link to="/rockets">Rockets</Link>
@@ -10,4 +10,4 @@ const Header = () => (
   </nav>
 );
 
-export default Header;
+export default NavLink;
