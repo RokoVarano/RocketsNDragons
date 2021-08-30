@@ -29,7 +29,7 @@ const NavLink = () => {
     <AppBar position="static">
       <Toolbar>
         <Typography variant="h6" className={classes.title}>
-          News
+          Rockets N Dragons
         </Typography>
 
         <Button color="inherit" onClick={() => handleOnClick('/')}>
