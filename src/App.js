@@ -4,6 +4,7 @@ import NavLink from './components/NavLink/NavLink';
 import store from './redux/configureStore';
 import Profile from './components/Profile/Profile';
 import Dragons from './components/Dragons/Dragons';
+import Rockets from './components/Rockets';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <NavLink />
         <Switch>
           <Route path="/dragons" component={Dragons} />
+          <Route path="/rockets" component={Rockets} />
           <Route path="/" exact component={Profile} />
         </Switch>
       </Router>
