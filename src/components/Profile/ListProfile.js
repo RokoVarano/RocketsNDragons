@@ -4,26 +4,25 @@ import {
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ListProfile = ({ data }) => {
-  const iteration = (data) => data.map((item) => (
-    <div key={data.id}>
-      <Divider />
-      <ListItem>
-        <ListItemText primary={item} />
-      </ListItem>
-      <Divider />
-    </div>
-  ));
-
+const ListProfile = (props) => {
+  const { data } = props;
   return (
     <List>
-      {iteration(data)}
+      {data.map((item) => (
+        <div key={item.id}>
+          <Divider />
+          <ListItem>
+            <ListItemText primary={item.name} />
+          </ListItem>
+          <Divider />
+        </div>
+      ))}
     </List>
   );
 };
 
 ListProfile.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  data: PropTypes.isRequired,
 };
 
 export default ListProfile;
