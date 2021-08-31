@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const GET_DRAGONS = 'GET_DRAGONS';
+const RESERVE_DRAGON = 'RESERVE_DRAGON';
 
 const baseURL = 'https://api.spacexdata.com/v3/dragons';
 
@@ -22,14 +23,26 @@ const getDragons = () => async (dispatch) => {
   });
 };
 
+const reserveDragon = (id) => ({
+  type: RESERVE_DRAGON,
+  id,
+});
+
 const dragons = (state = [], action) => {
   switch (action.type) {
     case GET_DRAGONS:
       return action.dragons;
+    case RESERVE_DRAGON: {
+      const dragons = state.map((dragon) => {
+        if (dragon.id === action.id) return { ...dragon, reserved: true };
+        return dragon;
+      });
+      return dragons;
+    }
     default:
       return state;
   }
 };
 
 export default dragons;
-export { getDragons };
+export { getDragons, reserveDragon };

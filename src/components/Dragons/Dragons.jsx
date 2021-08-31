@@ -32,10 +32,8 @@ const Dragons = () => {
           key={dragon.id}
         >
           <DragonWidget
-            image={dragon.flickr_images[0]}
-            name={dragon.name}
-            type={dragon.type}
-            id={dragon.id}
+            dragon={dragon}
+            dispatch={dispatch}
           />
         </Grid>
       ),
