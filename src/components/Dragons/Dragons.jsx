@@ -1,15 +1,17 @@
-import { Container } from '@material-ui/core';
+import { Container, Grid, Typography } from '@material-ui/core';
 import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { useSelector, useDispatch } from 'react-redux';
 import DragonWidget from './DragonWidget';
 import { getDragons } from '../../redux/dragons/dragons';
 
-const useStyles = makeStyles({
-  root: {
-    padding: '1rem',
+const useStyles = makeStyles((theme) => ({
+  paperTitle: {
+    padding: theme.spacing(1),
+    textAlign: 'left',
+    color: theme.palette.text.secondary,
   },
-});
+}));
 
 const Dragons = () => {
   const dispatch = useDispatch();
@@ -24,20 +26,35 @@ const Dragons = () => {
   const dragonWidgets = (dragons) => (
     dragons.map(
       (dragon) => (
-        <DragonWidget
-          image={dragon.flickr_images[0]}
-          name={dragon.name}
-          type={dragon.type}
+        <Grid
+          item
+          xs={12}
           key={dragon.id}
-        />
+        >
+          <DragonWidget
+            dragon={dragon}
+            dispatch={dispatch}
+          />
+        </Grid>
       ),
     )
   );
 
   return (
-    <Container className={classes.root}>
-      {dragonWidgets(dragons)}
-    </Container>
+    <>
+      <Container>
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <div className={classes.paperTitle}>
+              <Typography component="h4" variant="h4">
+                Dragons
+              </Typography>
+            </div>
+          </Grid>
+          {dragonWidgets(dragons)}
+        </Grid>
+      </Container>
+    </>
   );
 };
 
