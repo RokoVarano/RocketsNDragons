@@ -16,7 +16,7 @@ const Dragons = () => {
 
   useEffect(() => {
     dispatch(getDragons());
-  });
+  }, []);
 
   const classes = useStyles();
   const dragons = useSelector((state) => state.dragons);

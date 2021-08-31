@@ -5,8 +5,6 @@ const GET_DRAGONS = 'GET_DRAGONS';
 const baseURL = 'https://api.spacexdata.com/v3/dragons';
 
 const getDragons = () => async (dispatch) => {
-  console.log('YAY');
-
   axios.get(baseURL).then((response) => {
     const { data } = response;
 
