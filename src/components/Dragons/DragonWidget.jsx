@@ -42,7 +42,6 @@ const useStyles = makeStyles((theme) => ({
 const DragonWidget = (props) => {
   const classes = useStyles();
   const { dragon, dispatch } = props;
-  console.log(dragon);
 
   const reserveButton = (dragon) => (
     <Button onClick={() => { dispatch(reserveDragon(dragon.id)); }} size="small" color="primary">

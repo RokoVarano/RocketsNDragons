@@ -14,6 +14,7 @@ const getDragons = () => async (dispatch) => {
       name: item.name,
       type: item.type,
       flickr_images: item.flickr_images,
+      reserved: false,
     }), []);
 
     dispatch({
@@ -34,7 +35,7 @@ const dragons = (state = [], action) => {
       return action.dragons;
     case RESERVE_DRAGON: {
       const dragons = state.map((dragon) => {
-        if (dragon.id === action.id) return { ...dragon, reserved: true };
+        if (dragon.id === action.id) return { ...dragon, reserved: !dragon.reserved };
         return dragon;
       });
       return dragons;
