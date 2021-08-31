@@ -65,13 +65,16 @@ const RocketCard = ({ data }) => {
           <Typography component="h5" variant="h5">
             {data.rocket_name}
           </Typography>
-          <Chip
-            icon={<DoneIcon />}
-            color="primary"
-            size="small"
-            label="Reserved"
-          />
+
           <Typography variant="subtitle1" color="textSecondary">
+            {data.reserved && (
+              <Chip
+                icon={<DoneIcon />}
+                color="primary"
+                size="small"
+                label="Reserved"
+              />
+            )}
             {data.description}
           </Typography>
         </CardContent>
