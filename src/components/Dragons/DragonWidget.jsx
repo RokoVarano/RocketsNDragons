@@ -6,6 +6,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
+import Badge from '@material-ui/core/Badge';
 import Typography from '@material-ui/core/Typography';
 import { reserveDragon } from '../../redux/dragons/dragons';
 
@@ -58,9 +59,11 @@ const DragonWidget = (props) => {
       />
       <div className={classes.details}>
         <CardContent className={classes.content}>
-          <Typography component="h5" variant="h5">
-            {dragon.name}
-          </Typography>
+          <Badge badgeContent="Reserved" color="secondary" invisible={!dragon.reserved}>
+            <Typography component="h5" variant="h5">
+              {dragon.name}
+            </Typography>
+          </Badge>
           <Typography variant="subtitle1" color="textSecondary">
             {dragon.type}
           </Typography>
