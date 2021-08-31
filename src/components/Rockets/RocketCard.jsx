@@ -40,6 +40,9 @@ const useStyles = makeStyles((theme) => ({
 
 const RocketCard = ({ data }) => {
   const classes = useStyles();
+  const handleReservation = (rocketID) => {
+    console.log(rocketID);
+  };
   return (
     <Card className={classes.root}>
       <CardMedia
@@ -58,7 +61,11 @@ const RocketCard = ({ data }) => {
         </CardContent>
         <div className={classes.controls}>
           <CardActions>
-            <Button size="small" color="primary">
+            <Button
+              size="small"
+              color="primary"
+              onClick={() => handleReservation(data.id)}
+            >
               Reserve Rocket
             </Button>
           </CardActions>
