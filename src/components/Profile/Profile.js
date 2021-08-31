@@ -15,9 +15,11 @@ const useStyles = makeStyles((theme) => ({
 
 const Profile = () => {
   const classes = useStyles();
-  // const rockets = useSelector((state) => (
-  //   state.rocketsReducer.rockets.filter((rocket) => rocket.reserved === true)
-  // ));
+  const rockets = useSelector((state) => state.rocketsReducer.rockets.reduce((acc, item) => {
+    if (item.reserved) return acc.concat({ id: item.id, name: item.rocket_name });
+    return acc;
+  },
+  []));
   const dr = useSelector((state) => (state.dragons.filter((dragon) => dragon.reserved === true)));
 
   return (
@@ -35,7 +37,7 @@ const Profile = () => {
             <Typography component="h4" variant="h4">
               My Rockets
             </Typography>
-            {/* <ListProfile data={rockets} /> */}
+            <ListProfile data={rockets} />
           </Grid>
           <Grid item xs={4}>
             <Typography component="h4" variant="h4">
