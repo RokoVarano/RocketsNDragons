@@ -42,8 +42,6 @@ const fetchRockets = () => (dispatch) => {
     .get(`${endPoint}`)
     .then((response) => {
       if (response.data !== '') {
-        // let data = response.data;
-        console.log(response.data);
         dispatch(loadSuccess(response.data));
       }
     })
