@@ -2,7 +2,7 @@ import { React, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import MissionsItem from './MissionsPage';
 import './Missions.module.css';
-import { getMissions } from '../../redux/missions/missions';
+import { getMissions, joinMissions, leaveMisssions } from '../../redux/missions/missions';
 
 const Mission = () => {
   const dispatch = useDispatch();
@@ -19,7 +19,6 @@ const Mission = () => {
         <th>Mission</th>
         <th>Descriptions</th>
         <th>Status</th>
-        <th>{String.fromCharCode(8194)}</th>
       </tr>
       {missionData.map((data) => (
         <MissionsItem

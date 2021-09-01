@@ -1,4 +1,6 @@
 const UPDATE_ALL = 'redux/mission/UPDATE_ALL';
+const JOIN_MISSION = 'redux/mission/JOIN_MISSION';
+const LEAVE_MISSION = 'redux/mission/LEAVE_MISSION';
 
 const initialState = [];
 
