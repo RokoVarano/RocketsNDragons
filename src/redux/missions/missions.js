@@ -54,7 +54,6 @@ const missionsReducer = (state = initialState, action) => {
     default:
       return state;
   }
-    
 };
 
 export const joinMissions = (payload) => ({

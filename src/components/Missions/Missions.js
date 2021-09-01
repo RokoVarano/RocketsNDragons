@@ -24,13 +24,17 @@ const Mission = () => {
 
   return (
     <table>
-      <tr>
-        <th>Mission</th>
-        <th>Descriptions</th>
-        <th>Status</th>
-      </tr>
-      {missionData.map((data) => (
-         <MissionsPage
+      <thead>
+        <tr>
+          <th>Mission</th>
+          <th>Descriptions</th>
+          <th>Status</th>
+          <th>{String.fromCharCode(8194)}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {missionData.map((data) => (
+          <MissionsPage
             key={data.mission_id}
             joinMissionHandler={joinMissionHandler}
             leaveMissionHandler={leaveMissionHandler}
@@ -39,8 +43,10 @@ const Mission = () => {
             description={data.description}
             reserved={data.reserved}
           />
-      ))}
+        ))}
+      </tbody>
     </table>
+
   );
 };
 
