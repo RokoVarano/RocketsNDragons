@@ -4,7 +4,6 @@ import MissionsItem from './MissionsPage';
 import './Missions.module.css';
 import { getMissions } from '../../redux/missions/missions';
 
-
 const Mission = () => {
   const dispatch = useDispatch();
   const missionData = useSelector((state) => state.missions);
