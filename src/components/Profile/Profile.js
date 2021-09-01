@@ -21,8 +21,11 @@ const Profile = () => {
   },
   []));
   const dr = useSelector((state) => (state.dragons.filter((dragon) => dragon.reserved === true)));
-  const missionsList = useSelector((state) => state.missions);
-  const reservedMissions = missionsList.filter((mission) => mission.reserved);
+  const missions = useSelector((state) => state.missions.reduce((acc, item) => {
+    if (item.reserved) return acc.concat({ id: item.mission_id, name: item.mission_name });
+    return acc;
+  },
+  []));
 
   return (
     <>
@@ -51,11 +54,7 @@ const Profile = () => {
             <Typography component="h4" variant="h4">
               My Missions
             </Typography>
-            <ul>
-              {reservedMissions.map((mission) => (
-                <div key={mission.mission_id}>{mission.mission_name}</div>
-              ))}
-            </ul>
+            <ListProfile data={missions} />
           </Grid>
         </Grid>
       </Container>
