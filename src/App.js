@@ -15,9 +15,7 @@ function App() {
         <Switch>
           <Route path="/dragons" component={Dragons} />
           <Route path="/rockets" component={Rockets} />
-          <Route path="/missions">
-            <Missions />
-          </Route>
+          <Route path="/missions" component={Missions} />
           <Route path="/" exact component={Profile} />
         </Switch>
       </Router>

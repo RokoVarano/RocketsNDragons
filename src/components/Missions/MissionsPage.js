@@ -1,4 +1,4 @@
-const MissionsItem = (prop) => {
+const MissionsPage = (prop) => {
   const { name, description } = prop;
 
   return (
@@ -17,4 +17,4 @@ const MissionsItem = (prop) => {
   );
 };
 
-export default MissionsItem;
+export default MissionsPage;
