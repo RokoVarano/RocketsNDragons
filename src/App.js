@@ -7,6 +7,8 @@ import Dragons from './components/Dragons/Dragons';
 import Rockets from './components/Rockets';
 import { fetchRockets } from './redux/rockets/rockets';
 import { getDragons } from './redux/dragons/dragons';
+import Missions from './components/Missions/Missions';
+
 
 function App() {
   const dispatch = useDispatch();
@@ -14,17 +16,19 @@ function App() {
   useEffect(() => {
     dispatch(fetchRockets());
     dispatch(getDragons());
+    dispatch(getMissions());
   }, []);
 
   return (
-    <Router>
-      <NavLink />
-      <Switch>
-        <Route path="/dragons" component={Dragons} />
-        <Route path="/rockets" component={Rockets} />
-        <Route path="/" exact component={Profile} />
-      </Switch>
-    </Router>
+      <Router>
+        <NavLink />
+        <Switch>
+          <Route path="/dragons" component={Dragons} />
+          <Route path="/rockets" component={Rockets} />
+          <Route path="/missions" component={Missions} />
+          <Route path="/" exact component={Profile} />
+        </Switch>
+      </Router>
   );
 }
 
