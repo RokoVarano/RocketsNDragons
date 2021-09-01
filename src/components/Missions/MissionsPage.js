@@ -1,5 +1,19 @@
 const MissionsPage = (prop) => {
-  const { name, description } = prop;
+  const { joinMissionHandler, id,  name, description, reserved, leaveMissionHandler } = prop;
+
+  let button;
+  if (!reserved) {
+    button = <button type="button" className="mission-btn-join" onClick={() => joinMissionHandler(id)}>Join Mission</button>;
+  } else {
+    button = <button type="button" className="mission-btn-badge" onClick={() => leaveMissionHandler(id)}>Leave <Mission>Leave Mission|</Mission></button>;
+   }
+
+   let badge;
+   if (!reserved) {
+     badge = <span className="mission-btn">Not a Member</span>;
+   } else {
+     badge = <span className="join-badge">Actuve Member</span>;
+    }
 
   return (
 
@@ -7,10 +21,10 @@ const MissionsPage = (prop) => {
       <td className="mission-title">{name}</td>
       <td className="mission-description">{description}</td>
       <td>
-        <button className="mission-button" type="button">Not a Member</button>
+        {badge}
       </td>
       <td>
-        <button className="mission-button-join" type="button">Join Mission</button>
+        {button}
       </td>
     </tr>
 
