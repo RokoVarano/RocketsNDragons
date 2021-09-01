@@ -5,7 +5,7 @@
 import React from 'react';
 import configureStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import DragonWidget from './DragonWidget';
 
@@ -29,11 +29,14 @@ describe('Test Button component', () => {
   }];
 
   // Assert
-  test('Testing Button component render', () => {
-    const component = render(
-      <Provider store={store}><DragonWidget dragon={dragons[0]} /></Provider>,
+  test('Test renders', () => {
+    const dragon = dragons[0];
+    render(
+      <Provider store={store}><DragonWidget dragon={dragon} /></Provider>,
     );
 
-    component.getByText('Dragon 1');
+    expect(screen.getByText(dragon.name)).not.toBe(undefined);
+    expect(screen.getByText(dragon.type)).not.toBe(undefined);
+    expect(screen.getByText('Reserved').classList.contains('MuiBadge-invisible')).toBe(true);
   });
 });
