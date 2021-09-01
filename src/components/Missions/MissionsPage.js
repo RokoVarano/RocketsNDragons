@@ -1,3 +1,8 @@
+import TableRow from '@material-ui/core/TableRow';
+import TableCell from '@material-ui/core/TableCell';
+import Button from '@material-ui/core/Button';
+import Chip from '@material-ui/core/Chip';
+
 const MissionsPage = (prop) => {
   const {
     joinMissionHandler, id, name, description, reserved, leaveMissionHandler,
@@ -5,30 +10,36 @@ const MissionsPage = (prop) => {
 
   let button;
   if (!reserved) {
-    button = <button type="button" className="mission-button-join" onClick={() => joinMissionHandler(id)}>Join Mission</button>;
+    button = (
+      <Button variant="contained" color="primary" onClick={() => joinMissionHandler(id)}>
+        Join Mission
+      </Button>
+    );
   } else {
-    button = <button type="button" className="mission-button-badge" onClick={() => leaveMissionHandler(id)}>Leave Mission</button>;
+    button = (
+      <Button variant="contained" color="secondary" onClick={() => leaveMissionHandler(id)}>
+        Leave Mission
+      </Button>
+    );
   }
 
   let badge;
   if (!reserved) {
-    badge = <span className="mission-button">Not a Member</span>;
+    badge = <Chip label="Not a Member" color="primary" />;
   } else {
-    badge = <span className="join-badge ">Active Member</span>;
+    badge = <Chip label="Active Member" color="secondary" />;
   }
 
   return (
+    <TableRow key={id}>
+      <TableCell component="th" scope="row">
+        {name}
+      </TableCell>
+      <TableCell align="right">{description}</TableCell>
+      <TableCell align="right">{badge}</TableCell>
+      <TableCell align="right">{button}</TableCell>
 
-    <tr>
-      <td className="mission-title">{name}</td>
-      <td className="mission-description">{description}</td>
-      <td>
-        {badge}
-      </td>
-      <td>
-        {button}
-      </td>
-    </tr>
+    </TableRow>
 
   );
 };
