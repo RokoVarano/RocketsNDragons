@@ -1,9 +1,8 @@
 import { Container, Grid, Typography } from '@material-ui/core';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import DragonWidget from './DragonWidget';
-import { getDragons } from '../../redux/dragons/dragons';
 
 const useStyles = makeStyles((theme) => ({
   paperTitle: {
@@ -14,12 +13,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Dragons = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getDragons());
-  }, []);
-
   const classes = useStyles();
   const dragons = useSelector((state) => state.dragons);
 
@@ -33,7 +26,6 @@ const Dragons = () => {
         >
           <DragonWidget
             dragon={dragon}
-            dispatch={dispatch}
           />
         </Grid>
       ),

@@ -8,6 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Badge from '@material-ui/core/Badge';
 import Typography from '@material-ui/core/Typography';
+import { useDispatch } from 'react-redux';
 import { reserveDragon } from '../../redux/dragons/dragons';
 
 const useStyles = makeStyles((theme) => ({
@@ -42,7 +43,8 @@ const useStyles = makeStyles((theme) => ({
 
 const DragonWidget = (props) => {
   const classes = useStyles();
-  const { dragon, dispatch } = props;
+  const { dragon } = props;
+  const dispatch = useDispatch();
 
   const reserveButton = (dragon) => (
     <Button onClick={() => { dispatch(reserveDragon(dragon.id)); }} size="small" color="primary">
@@ -80,7 +82,6 @@ const DragonWidget = (props) => {
 
 DragonWidget.propTypes = {
   dragon: PropTypes.objectOf(PropTypes.object).isRequired,
-  dispatch: PropTypes.func.isRequired,
 };
 
 export default DragonWidget;
