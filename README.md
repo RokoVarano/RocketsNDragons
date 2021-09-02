@@ -50,7 +50,7 @@ A Reservations for Missions Rockets and dragons project with React JS
 
 ## Video Presentation
 
-[Loom](https://www.loom.com/share/99800c3ef404470ebc77e65ba6bad419)
+[Youtube](https://youtu.be/j3Oym4YeszY)
 
 
 ### Built With
