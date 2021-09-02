@@ -26,7 +26,7 @@ function App() {
         <Route path="/dragons" component={Dragons} />
         <Route path="/rockets" component={Rockets} />
         <Route path="/missions" component={Missions} />
-        <Route path="/" exact component={Profile} />
+        <Route path="/" exact component={Rockets} />
       </Switch>
     </Router>
   );
