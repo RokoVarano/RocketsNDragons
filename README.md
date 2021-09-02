@@ -68,13 +68,13 @@ A Reservations for Missions Rockets and dragons project with React JS
 
 - GitHub: [@RokoVarano](https://github.com/RokoVarano)
 - Twitter: [@RodrigoIbacet11](https://twitter.com/RodrigoIbacet11)
-- LinkedIn: [RokoVarano](https://www.linkedin.com/in/RokoVarano/)
+- LinkedIn: [rodrigo-ibaceta](https://www.linkedin.com/in/rodrigo-ibaceta/)
 
-👤 **Ricardo R**
+👤 **Ricardo Rodriguez**
 
 - GitHub: [@Richie9000](https://github.com/Richie9000)
 - Twitter: [@R1ck1987](https://twitter.com/R1ck1987)
-- LinkedIn: [R1ck1987](https://www.linkedin.com/in/R1ck1987/)
+- LinkedIn: [ricardo-rod](https://www.linkedin.com/in/ricardo-rod-3720a8212/ )
 
 ## Getting Started
 
