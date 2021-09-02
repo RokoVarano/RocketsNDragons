@@ -21,6 +21,11 @@ const Profile = () => {
   },
   []));
   const dr = useSelector((state) => (state.dragons.filter((dragon) => dragon.reserved === true)));
+  const missions = useSelector((state) => state.missions.reduce((acc, item) => {
+    if (item.reserved) return acc.concat({ id: item.mission_id, name: item.mission_name });
+    return acc;
+  },
+  []));
 
   return (
     <>
@@ -54,7 +59,7 @@ const Profile = () => {
               <Typography component="h4" variant="h4">
                 My Missions
               </Typography>
-              {/* <ListProfile /> */}
+              <ListProfile data={missions} />
             </Paper>
           </Grid>
         </Grid>
