@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Grid } from '@material-ui/core';
+import { Container, Grid, Paper } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import { useSelector } from 'react-redux';
@@ -34,22 +34,28 @@ const Profile = () => {
             </div>
           </Grid>
           <Grid item xs={4}>
-            <Typography component="h4" variant="h4">
-              My Rockets
-            </Typography>
-            <ListProfile data={rockets} />
+            <Paper elevation={1}>
+              <Typography component="h4" variant="h4">
+                My Rockets
+              </Typography>
+              <ListProfile data={rockets} />
+            </Paper>
           </Grid>
           <Grid item xs={4}>
-            <Typography component="h4" variant="h4">
-              My Dragons
-            </Typography>
-            <ListProfile data={dr} />
+            <Paper elevation={1}>
+              <Typography component="h4" variant="h4">
+                My Dragons
+              </Typography>
+              <ListProfile data={dr} />
+            </Paper>
           </Grid>
           <Grid item xs={4}>
-            <Typography component="h4" variant="h4">
-              My Missions
-            </Typography>
-            {/* <ListProfile /> */}
+            <Paper elevation={1}>
+              <Typography component="h4" variant="h4">
+                My Missions
+              </Typography>
+              {/* <ListProfile /> */}
+            </Paper>
           </Grid>
         </Grid>
       </Container>

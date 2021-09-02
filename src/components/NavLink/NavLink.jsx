@@ -16,6 +16,10 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  logo: {
+    maxWidth: 52,
+    marginRight: 30,
+  },
 }));
 
 const NavLink = () => {
@@ -28,6 +32,7 @@ const NavLink = () => {
   return (
     <AppBar position="static">
       <Toolbar>
+        <img src="./planet_logo.png" alt="logo" className={classes.logo} />
         <Typography variant="h6" className={classes.title}>
           Rockets N Dragons
         </Typography>
