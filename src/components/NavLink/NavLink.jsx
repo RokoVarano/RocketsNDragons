@@ -37,7 +37,7 @@ const NavLink = () => {
           Rockets N Dragons
         </Typography>
 
-        <Button color="inherit" onClick={() => handleOnClick('/')}>
+        <Button color="inherit" onClick={() => handleOnClick('/profile')}>
           Profile
         </Button>
         <Button color="inherit" onClick={() => handleOnClick('/rockets')}>
